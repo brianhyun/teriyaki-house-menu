@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Teriyaki House`,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
