@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import styles from "./layout.module.css"
+import "./layout.module.css"
 
 export default function Layout({ children }) {
   const data = useStaticQuery(
@@ -25,8 +25,8 @@ export default function Layout({ children }) {
 }
 
 export const Header = props => (
-  <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-    <div className="container-fluid px-0">
+  <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div className="container-fluid">
       <Link className="navbar-brand" to="/">
         {props.siteTitle}
       </Link>
