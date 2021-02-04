@@ -21,7 +21,7 @@ export default function AccordionItem(props) {
         aria-labelledby="headingOne"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body bg-light">{props.children}</div>
+        <div className="accordion-body bg-light">{/* show items */}</div>
       </div>
     </div>
   )
