@@ -30,12 +30,14 @@ export default function Menu() {
   )
 
   return (
-    <section id="menu" className="d-flex align-items-center">
+    <section id="menu" className="d-flex align-items-center py-4">
       <div className={`${styles.menuContainer}`}>
         <h2 className="mb-4">Menu</h2>
         <div className="accordion" id="accordionExample">
-          {data.content.nodes.forEach((category, index) => (
+          {data.content.nodes.map((category, index) => (
             <AccordionItem
+              key={index}
+              id={index}
               foodType={category.title.title}
               ariaExpanded={index === 0 ? true : false}
               items={category.items}

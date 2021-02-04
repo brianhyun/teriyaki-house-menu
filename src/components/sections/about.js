@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about">
       <div>
-        <h1>About</h1>
+        <h2>About</h2>
       </div>
     </section>
   )
