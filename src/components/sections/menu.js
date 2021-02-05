@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import AccordionItem from "./accordion-item"
-import styles from "./menu.module.css"
 
 export default function Menu() {
   const data = useStaticQuery(
@@ -30,9 +29,9 @@ export default function Menu() {
   )
 
   return (
-    <section id="menu" className="d-flex align-items-center py-4">
-      <div className={`${styles.menuContainer}`}>
-        <h2 className="mb-4">Menu</h2>
+    <section id="menu" className="d-flex align-items-center">
+      <div className="w-100">
+        <h2 className="mb-5">Menu</h2>
         <div className="accordion" id="accordionExample">
           {data.content.nodes.map((category, index) => (
             <AccordionItem

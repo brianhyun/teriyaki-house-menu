@@ -17,7 +17,10 @@ export default function Landing() {
   )
 
   return (
-    <section className="position-relative d-flex align-items-center">
+    <section
+      id="landing"
+      className="position-relative d-flex align-items-center"
+    >
       <div>
         <h1 className="display-4 mb-3">{data.site.siteMetadata.title}</h1>
         <p>Japanese-Korean fusion with an American touch.</p>
