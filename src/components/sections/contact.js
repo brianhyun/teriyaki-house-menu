@@ -1,15 +1,18 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Map from "ol/Map"
-import View from "ol/View"
-import OSM, { ATTRIBUTION } from "ol/source/OSM"
-import VectorLayer from "ol/layer/Vector"
-import Vector from "ol/source/Vector"
-import Feature from "ol/Feature"
-import TileLayer from "ol/layer/Tile"
-import { fromLonLat } from "ol/proj"
-import Point from "ol/geom/Point"
-import "ol/ol.css"
+import L from "leaflet"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import "leaflet/dist/leaflet.css"
+import styles from "./contact.module.css"
+
+// Fix Issue with Invisible Marker
+delete L.Icon.Default.prototype._getIconUrl
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+  iconUrl: require("leaflet/dist/images/marker-icon.png"),
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+})
 
 export default function Contact() {
   const data = useStaticQuery(
@@ -31,40 +34,8 @@ export default function Contact() {
   )
 
   const content = data.content.nodes[0]
-
-  // OpenLayers Map
-  useEffect(() => {
-    const { lon, lat } = content.location
-    const teriHouse = [lon, lat]
-    const teriHouseWebMercator = fromLonLat(teriHouse)
-
-    const map = new Map({
-      target: "map",
-      layers: [
-        new TileLayer({
-          source: new OSM({
-            url: "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-          }),
-        }),
-      ],
-      view: new View({
-        center: teriHouseWebMercator,
-        zoom: 16,
-      }),
-    })
-
-    const layer = new VectorLayer({
-      source: new Vector({
-        features: [
-          new Feature({
-            geometry: new Point(teriHouseWebMercator),
-          }),
-        ],
-      }),
-    })
-
-    map.addLayer(layer)
-  }, [])
+  const { lat, lon } = content.location
+  const coordinates = [lat, lon]
 
   return (
     <section id="contact">
@@ -79,7 +50,19 @@ export default function Contact() {
             <p>{content.address}</p>
           </div>
           <div className="col-sm px-0">
-            <div id="map" className="w-100 h-100"></div>
+            <MapContainer
+              center={coordinates}
+              zoom={20}
+              className={styles.mapContainer}
+            >
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={coordinates}>
+                <Popup>We're by Stater Bros.!</Popup>
+              </Marker>
+            </MapContainer>
           </div>
         </div>
       </div>
