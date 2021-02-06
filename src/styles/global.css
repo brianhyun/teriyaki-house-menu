@@ -12,22 +12,15 @@ h6 {
 }
 
 a {
-  color: black;
-}
-
-a:hover {
   text-decoration: none;
+  color: black;
 }
 
 section {
   min-height: 100vh;
-  padding-top: 8rem;
+  padding: 7rem;
 }
 
 section#landing {
   padding-top: 0;
-}
-
-section#contact {
-  padding-bottom: 5rem;
 }

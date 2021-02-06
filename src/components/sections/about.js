@@ -18,9 +18,9 @@ export default function About() {
   )
 
   return (
-    <section id="about" className="d-flex align-items-center">
+    <section id="about" className="container px-0 d-flex align-items-center">
       <div>
-        <h2>About Us</h2>
+        <h2 className="text-center">About Us</h2>
         {data.content.nodes.map((section, index) => (
           <AboutItem
             key={index}

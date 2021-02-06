@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import AccordionItem from "./accordion-item"
+import CardMenu from "./menu-display/card-menu"
 
 export default function Menu() {
   const data = useStaticQuery(
@@ -11,6 +11,9 @@ export default function Menu() {
           nodes {
             title {
               title
+            }
+            categoryDescription {
+              categoryDescription
             }
             items {
               id
@@ -29,20 +32,10 @@ export default function Menu() {
   )
 
   return (
-    <section id="menu" className="d-flex align-items-center">
+    <section id="menu" className="container px-0 d-flex align-items-center">
       <div className="w-100">
-        <h2 className="mb-5">Menu</h2>
-        <div className="accordion" id="accordionExample">
-          {data.content.nodes.map((category, index) => (
-            <AccordionItem
-              key={index}
-              id={index}
-              foodType={category.title.title}
-              ariaExpanded={index === 0 ? true : false}
-              items={category.items}
-            />
-          ))}
-        </div>
+        <h2 className="mb-5 text-center">Menu</h2>
+        <CardMenu data={data.content.nodes} />
       </div>
     </section>
   )

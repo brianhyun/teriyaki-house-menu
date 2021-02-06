@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import landingPhoto from "../../../static/landing.svg"
 
 import styles from "./landing.module.css"
 
@@ -19,12 +20,20 @@ export default function Landing() {
   return (
     <section
       id="landing"
-      className="position-relative d-flex align-items-center"
+      className="container px-0 position-relative d-flex align-items-center w-100"
     >
       <div>
         <h1 className="display-4 mb-3">{data.site.siteMetadata.title}</h1>
         <p>Japanese-Korean fusion with an American touch.</p>
       </div>
+      <div className="position-absolute top-50 end-0 translate-middle-y w-50">
+        <img
+          src={landingPhoto}
+          alt="cashier taking customer's order"
+          className="w-100"
+        />
+      </div>
+
       <a
         className={`position-absolute d-flex flex-column align-items-center ${styles.seeMenuBox}`}
         href="#menu"

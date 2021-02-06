@@ -21,10 +21,10 @@ export default function Contact() {
   const coordinates = [34.10729, -117.83583]
 
   return (
-    <section id="contact">
-      <h3>Reach out!</h3>
+    <section id="contact" className="container px-0">
+      <h2 className="text-center">Reach out!</h2>
       <Map coordinates={coordinates} />
-      <div className="container mt-5">
+      <div className="container">
         <div className="row">
           <div className="col-sm px-0">
             <p>{content.phoneNumber}</p>

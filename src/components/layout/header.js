@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 
 export default function Header(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top p-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top p-3">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand text-white" to="/">
           {props.siteTitle}
         </Link>
         <button
@@ -24,13 +24,13 @@ export default function Header(props) {
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
-            <a className="nav-link" href="#menu">
+            <a className="nav-link text-white" href="#menu">
               Menu
             </a>
-            <a className="nav-link" href="#about">
+            <a className="nav-link text-white" href="#about">
               About
             </a>
-            <a className="nav-link" href="#contact">
+            <a className="nav-link text-white" href="#contact">
               Contact
             </a>
           </div>
