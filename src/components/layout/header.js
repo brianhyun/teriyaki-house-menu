@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function Header(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top p-3">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           {props.siteTitle}
