@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 export default function CardMenu(props) {
   return (
@@ -7,9 +7,10 @@ export default function CardMenu(props) {
       {props.data.map((category, index) => (
         <div className="col" key={index}>
           <div className="card h-100">
-            <div class="card-header bg-dark" style={{ height: "15rem" }}>
-              Header
-            </div>
+            <div
+              className="card-header bg-dark d-flex align-items-center justify-content-center"
+              style={{ height: "15rem" }}
+            ></div>
             <div className="card-body p-3">
               <h5 className="card-title">{category.title.title}</h5>
               <p className="card-text">

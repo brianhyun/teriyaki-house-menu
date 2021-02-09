@@ -20,18 +20,22 @@ export default function Landing() {
   return (
     <section
       id="landing"
-      className="container px-0 position-relative d-flex align-items-center w-100"
+      className="container px-0 position-relative d-flex align-items-center"
     >
-      <div>
-        <h1 className="display-4 mb-3">{data.site.siteMetadata.title}</h1>
-        <p>Japanese-Korean fusion with an American touch.</p>
-      </div>
-      <div className="position-absolute top-50 end-0 translate-middle-y w-50">
-        <img
-          src={landingPhoto}
-          alt="cashier taking customer's order"
-          className="w-100"
-        />
+      <div className="row">
+        <div className="col d-flex align-items-center">
+          <div>
+            <h1 className="display-4 mb-3">{data.site.siteMetadata.title}</h1>
+            <p>Japanese-Korean fusion with an American touch.</p>
+          </div>
+        </div>
+        <div className="col" style={{ width: "75%" }}>
+          <img
+            src={landingPhoto}
+            alt="cashier taking customer's order"
+            className="w-100"
+          />
+        </div>
       </div>
 
       <a

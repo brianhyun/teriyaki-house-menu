@@ -18,9 +18,9 @@ a {
 
 section {
   min-height: 100vh;
-  padding: 7rem;
+  margin: 7rem 0;
 }
 
 section#landing {
-  padding-top: 0;
+  margin-top: 0;
 }

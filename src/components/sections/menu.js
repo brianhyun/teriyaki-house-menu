@@ -7,7 +7,7 @@ export default function Menu() {
   const data = useStaticQuery(
     graphql`
       query {
-        content: allContentfulCategory {
+        content: allContentfulCategory(sort: { fields: orderId }) {
           nodes {
             title {
               title
