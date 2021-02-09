@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import Landing from "../components/sections/landing"
 import Menu from "../components/sections/menu"
 import About from "../components/sections/about"
-import Contact from "../components/sections/contact"
+import Contact from "../components/sections/contact/contact"
 
 export default function Home() {
   return (

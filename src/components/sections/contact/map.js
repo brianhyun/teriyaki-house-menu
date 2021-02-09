@@ -19,7 +19,7 @@ export default function Map(props) {
       zoom={20}
       scrollWheelZoom={false}
       style={{
-        height: "55vh",
+        height: "40vh",
         width: "100%",
       }}
     >

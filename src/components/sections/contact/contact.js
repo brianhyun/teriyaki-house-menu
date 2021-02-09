@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Map from "../map"
+import Map from "./map"
 
 export default function Contact() {
   const data = useStaticQuery(
