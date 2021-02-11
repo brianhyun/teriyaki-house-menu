@@ -7,35 +7,59 @@ export default function Contact() {
     graphql`
       query {
         content: allContentfulCompanyInfo {
-          nodes {
-            phoneNumber
-            address
-            openingHours
+          edges {
+            node {
+              phoneNumber
+              address
+              hours {
+                hours {
+                  day
+                  hours
+                }
+              }
+            }
           }
         }
       }
     `
   )
 
-  const content = data.content.nodes[0]
+  const content = data.content.edges[0].node
   const coordinates = [34.10729, -117.83583]
+
+  console.log(content)
 
   return (
     <section id="contact" className="container">
       <h2 className="mb-5">Info</h2>
-      <Map coordinates={coordinates} />
-      <div>
-        <p className="fw-bold">Contact</p>
-        <p>{content.phoneNumber}</p>
-        <p>{content.address}</p>
+      <div className="mb-5">
+        <Map coordinates={coordinates} />
       </div>
-      <div>
-        <p className="fw-bold">Open Hours</p>
-        {content.openingHours.map((day, index) => (
-          <p key={index} className="pb-2">
-            {day}
-          </p>
-        ))}
+      <div className="container px-0 mb-5">
+        <div className="row g-5">
+          <div className="col-12 col-md-6">
+            <h5 className="fw-bold mb-3">Contact</h5>
+            <p className="mb-0">{content.phoneNumber}</p>
+          </div>
+          <div className="col-12 col-md-6">
+            <h5 className="fw-bold mb-3">Address</h5>
+            <p className="mb-0">{content.address}</p>
+          </div>
+          <div className="col-12 col-md-6 col-lg-5">
+            <h5 className="fw-bold mb-3">Open Hours</h5>
+            <div>
+              {content.hours.hours.map((day, index) => (
+                <div
+                  key={index}
+                  className="d-flex align-items-center justify-content-between mb-1"
+                >
+                  <p className="mb-0">{day.day}</p>
+                  <p className="mb-0">{day.hours}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

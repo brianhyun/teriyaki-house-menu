@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 
 export default function CardMenu(props) {
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-5">
+    <div className="row row-cols-1 row-cols-md-3 g-5">
       {props.data.map((category, index) => (
         <>
           <div className="col">

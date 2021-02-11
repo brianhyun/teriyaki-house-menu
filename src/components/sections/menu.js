@@ -37,8 +37,6 @@ export default function Menu() {
     `
   )
 
-  console.log(data)
-
   return (
     <section id="menu" className="container">
       <h2 className="mb-5">Menu</h2>
