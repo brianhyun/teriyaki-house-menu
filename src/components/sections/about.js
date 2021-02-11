@@ -18,17 +18,15 @@ export default function About() {
   )
 
   return (
-    <section id="about" className="container px-0 d-flex align-items-center">
-      <div>
-        <h2 className="text-center">About Us</h2>
-        {data.content.nodes.map((section, index) => (
-          <AboutItem
-            key={index}
-            title={section.title}
-            description={section.description.description}
-          />
-        ))}
-      </div>
+    <section id="about" className="container">
+      <h2 className="mb-5">About Us</h2>
+      {data.content.nodes.map((section, index) => (
+        <AboutItem
+          key={index}
+          title={section.title}
+          description={section.description.description}
+        />
+      ))}
     </section>
   )
 }

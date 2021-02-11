@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 
 export default function CardMenu(props) {
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-5">
+    <div className="row row-cols-1 row-cols-md-2 g-5">
       {props.data.map((category, index) => (
         <>
           <div className="col">
@@ -58,11 +58,35 @@ export default function CardMenu(props) {
                 <div className="modal-body">
                   <ul className="list-group list-group-flush">
                     {category.node.items.map((item, index) => (
-                      <li key={index} className="list-group-item">
-                        {item.itemName}
-                        {item.regPrice && item.regPrice}
-                        {item.lgPrice && item.lgPrice}
-                        {item.pltPrice && item.pltPrice}
+                      <li
+                        key={index}
+                        className="list-group-item px-0 d-flex align-items-center justify-content-between"
+                      >
+                        <p className="mb-0">{item.itemName}</p>
+                        <div className="d-flex flex-row">
+                          {item.regPrice && (
+                            <div className="d-flex flex-column align-items-center justify-content-between">
+                              <p className="fw-bold">Regular</p>
+                              <p className="mb-0">
+                                ${item.regPrice.toFixed(2)}
+                              </p>
+                            </div>
+                          )}
+                          {item.lgPrice && (
+                            <div className="d-flex flex-column align-items-center justify-content-between ms-4">
+                              <p className="fw-bold">Large</p>
+                              <p className="mb-0">${item.lgPrice.toFixed(2)}</p>
+                            </div>
+                          )}
+                          {item.pltPrice && (
+                            <div className="d-flex flex-column align-items-center justify-content-between ms-4">
+                              <p className="fw-bold">Plate</p>
+                              <p className="mb-0">
+                                ${item.pltPrice.toFixed(2)}
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </li>
                     ))}
                   </ul>

@@ -40,11 +40,9 @@ export default function Menu() {
   console.log(data)
 
   return (
-    <section id="menu" className="container px-0 d-flex align-items-center">
-      <div className="w-100">
-        <h2 className="mb-5 text-center">Menu</h2>
-        <CardMenu data={data.content.edges} />
-      </div>
+    <section id="menu" className="container">
+      <h2 className="mb-5">Menu</h2>
+      <CardMenu data={data.content.edges} />
     </section>
   )
 }

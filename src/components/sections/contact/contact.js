@@ -21,19 +21,21 @@ export default function Contact() {
   const coordinates = [34.10729, -117.83583]
 
   return (
-    <section id="contact" className="container px-0">
-      <h2 className="text-center">Reach out!</h2>
+    <section id="contact" className="container">
+      <h2 className="mb-5">Info</h2>
       <Map coordinates={coordinates} />
-      <div className="container">
-        <div className="row">
-          <div className="col-sm px-0">
-            <p>{content.phoneNumber}</p>
-            {content.openingHours.map((day, index) => (
-              <p key={index}>{day}</p>
-            ))}
-            <p>{content.address}</p>
-          </div>
-        </div>
+      <div>
+        <p className="fw-bold">Contact</p>
+        <p>{content.phoneNumber}</p>
+        <p>{content.address}</p>
+      </div>
+      <div>
+        <p className="fw-bold">Open Hours</p>
+        {content.openingHours.map((day, index) => (
+          <p key={index} className="pb-2">
+            {day}
+          </p>
+        ))}
       </div>
     </section>
   )

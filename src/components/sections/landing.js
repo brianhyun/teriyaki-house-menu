@@ -20,7 +20,7 @@ export default function Landing() {
   return (
     <section
       id="landing"
-      className="container px-0 position-relative d-flex align-items-center"
+      className="container position-relative d-flex align-items-center"
     >
       <div className="row">
         <div className="col d-flex align-items-center">
