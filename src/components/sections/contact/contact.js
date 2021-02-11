@@ -28,7 +28,7 @@ export default function Contact() {
   const coordinates = [34.10729, -117.83583]
 
   return (
-    <section id="contact" className="container">
+    <section className="container">
       <h2 className="mb-5">Info</h2>
       <div className="mb-5">
         <Map coordinates={coordinates} />

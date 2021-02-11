@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer
-      style={{ height: "30vh" }}
+      style={{ height: "40vh" }}
       className="d-flex align-items-center justify-content-center bg-dark text-white"
     >
       <p>Teriyaki House © {currentYear}</p>

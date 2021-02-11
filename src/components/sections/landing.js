@@ -1,8 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import landingPhoto from "../../../static/landing.svg"
-
-import styles from "./landing.module.css"
 
 export default function Landing() {
   const data = useStaticQuery(
@@ -20,45 +17,37 @@ export default function Landing() {
   return (
     <section
       id="landing"
-      className="container position-relative d-flex align-items-center"
+      className="container-fluid position-relative bg-dark text-white p-4"
     >
-      <div className="row">
-        <div className="col-12 col-lg-5">
-          <div className="h-100 d-flex flex-column justify-content-center">
-            <h1 className="mb-3">{data.site.siteMetadata.title}</h1>
-            <p>Japanese-Korean fusion with an American touch.</p>
-          </div>
-        </div>
-        <div className="col-12 col-lg-7">
-          <img
-            src={landingPhoto}
-            alt="cashier taking customer's order"
-            className="w-100"
-          />
-        </div>
-      </div>
-
-      <a
-        className={`position-absolute d-flex flex-column align-items-center ${styles.seeMenuBox}`}
-        href="#menu"
+      <div
+        className="position-absolute border border-white border-1 rounded-circle d-flex flex-column align-items-center justify-content-center"
+        style={{
+          height: "150px",
+          width: "150px",
+          top: "20px",
+          right: "20px",
+          transform: "rotate(30deg)",
+          zIndex: "1",
+        }}
       >
-        <p className="my-0">See Menu</p>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-chevron-down"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
-        </div>
-      </a>
+        <p className="m-0">Find us by</p>
+        <p className="m-0">Stater Bros!</p>
+      </div>
+      <div style={{ position: "relative", zIndex: "3" }}>
+        <h1 className="mb-5">{data.site.siteMetadata.title}</h1>
+        <h1 className="mb-5">
+          An Asian-American fusion restaurant that combines the classics of
+          Japanese and American cuisine, serving everything from sushi rolls and
+          bento boxes to classic American burgers without comprising the
+          integrity and quality from which these foods originate!
+        </h1>
+
+        <h1>
+          Recommendations: Chicken Rice Bowl with Avocado and Green Onions.
+          Chicken and Beef Plate. Chicken Bento Box. Avocado-Bacon-Cheese (ABC)
+          Burger Combo.
+        </h1>
+      </div>
     </section>
   )
 }

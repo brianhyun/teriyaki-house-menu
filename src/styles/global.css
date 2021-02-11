@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1,
@@ -22,6 +23,5 @@ section {
 }
 
 section#landing {
-  height: 100vh;
   padding: auto 0;
 }
