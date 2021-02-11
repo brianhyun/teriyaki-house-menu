@@ -36,13 +36,13 @@ export default function CardMenu(props) {
             </div>
           </div>
           <div
-            className="modal fade"
+            className="modal fade mt-0 px-0"
             id={`modal${index}`}
             tabIndex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div className="modal-dialog modal-xl modal-dialog-scrollable">
+            <div className="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered modal-fullscreen-lg-down">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">

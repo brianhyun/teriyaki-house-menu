@@ -23,13 +23,13 @@ export default function Landing() {
       className="container position-relative d-flex align-items-center"
     >
       <div className="row">
-        <div className="col d-flex align-items-center">
-          <div>
-            <h1 className="display-4 mb-3">{data.site.siteMetadata.title}</h1>
+        <div className="col-12 col-lg-5">
+          <div className="h-100 d-flex flex-column justify-content-center">
+            <h1 className="mb-3">{data.site.siteMetadata.title}</h1>
             <p>Japanese-Korean fusion with an American touch.</p>
           </div>
         </div>
-        <div className="col" style={{ width: "75%" }}>
+        <div className="col-12 col-lg-7">
           <img
             src={landingPhoto}
             alt="cashier taking customer's order"

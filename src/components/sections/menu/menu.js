@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import CardMenu from "./menu-display/card-menu"
+import CardMenu from "./card-menu"
 
 export default function Menu() {
   const data = useStaticQuery(
