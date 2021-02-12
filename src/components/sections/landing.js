@@ -20,18 +20,24 @@ export default function Landing() {
       className="container-fluid position-relative d-flex align-items-center justify-content-center bg-dark text-white p-4"
     >
       <div
-        className="position-absolute border border-white border-1 rounded-circle d-flex flex-column align-items-center justify-content-center"
+        className="position-absolute border border-warning border-1 rounded-circle d-flex flex-column align-items-center justify-content-center"
         style={{
           height: "150px",
           width: "150px",
           top: "20px",
           right: "20px",
-          transform: "rotate(30deg)",
           zIndex: "1",
         }}
       >
-        <p className="m-0">Find us by</p>
-        <p className="m-0">Stater Bros!</p>
+        <div
+          style={{
+            color: "#ffc107",
+            transform: "rotate(30deg)",
+          }}
+        >
+          <p className="m-0">Find us by</p>
+          <p className="m-0">Stater Bros!</p>
+        </div>
       </div>
       <div style={{ position: "relative", zIndex: "3" }}>
         <h1 className="mb-5">{data.site.siteMetadata.title}</h1>

@@ -33,7 +33,7 @@ export default function Contact() {
       <div className="mb-5">
         <Map coordinates={coordinates} />
       </div>
-      <div className="container px-0 mb-5">
+      <div className="container px-0 overflow-hidden">
         <div className="row g-5">
           <InfoItem title="Contact" info={content.phoneNumber} />
           <InfoItem title="Address" info={content.address} />
