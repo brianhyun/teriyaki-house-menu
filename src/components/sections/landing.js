@@ -17,41 +17,33 @@ export default function Landing() {
   return (
     <section
       id="landing"
-      className="container-fluid position-relative d-flex align-items-center justify-content-center bg-dark text-white p-4"
+      className="container-fluid position-relative d-flex align-items-center justify-content-center bg-dark text-white p-4 py-5"
     >
       <div
-        className="position-absolute border border-warning border-1 rounded-circle d-flex flex-column align-items-center justify-content-center"
+        className="position-absolute border border-warning d-flex flex-column align-items-center justify-content-center text-center text-warning p-2"
         style={{
-          height: "150px",
-          width: "150px",
           top: "20px",
           right: "20px",
           zIndex: "1",
         }}
       >
-        <div
-          style={{
-            color: "#ffc107",
-            transform: "rotate(30deg)",
-          }}
-        >
-          <p className="m-0">Find us by</p>
-          <p className="m-0">Stater Bros!</p>
-        </div>
+        <p className="m-0">Find us by</p>
+        <p className="m-0">Stater Bros!</p>
       </div>
-      <div style={{ position: "relative", zIndex: "3" }}>
+      <div className="position-relative" style={{ zIndex: "3" }}>
         <h1 className="mb-5">{data.site.siteMetadata.title}</h1>
         <h1 className="mb-5">
-          An Asian-American fusion restaurant that combines the classics of
-          Japanese and American cuisine, serving everything from sushi rolls and
-          bento boxes to classic American burgers without comprising the
-          integrity and quality from which these foods originate!
+          An <span className="text-warning">Asian-American fusion</span>{" "}
+          restaurant that combines the classics of Japanese and American
+          cuisine, serving everything from rice bowls, sushi rolls, and bento
+          boxes to burgers and french fries without comprising the integrity and
+          quality from which these foods originate!
         </h1>
 
         <h1>
-          Recommendations: Chicken Rice Bowl with Avocado and Green Onions.
-          Chicken and Beef Plate. Chicken Bento Box. Avocado-Bacon-Cheese (ABC)
-          Burger Combo.
+          <span className="text-warning">Recommendations:</span> Chicken Rice
+          Bowl with Avocado and Green Onions. Chicken and Beef Plate. Chicken
+          Bento Box. Avocado-Bacon-Cheese (ABC) Burger Combo.
         </h1>
       </div>
     </section>
