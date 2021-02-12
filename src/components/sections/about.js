@@ -18,28 +18,22 @@ export default function About() {
   )
 
   return (
-    <section className="container">
-      <h2 className="mb-5">About Us</h2>
-      <div className="container px-0">
-        <div className="row g-5 justify-content-between">
-          {data.content.nodes.map((section, index) => (
-            <AboutItem
-              key={index}
-              title={section.title}
-              description={section.description.description}
-            />
-          ))}
-        </div>
+    <section className="container-fluid bg-dark text-white p-0">
+      <div className="px-4 py-5">
+        <h1>About Us</h1>
+        {data.content.nodes.map(section => (
+          <div className="container-fluid px-0 mt-5">
+            <div className="row">
+              <div className="col-12 col-md-4">
+                <h1 className="me-5 mb-3">{section.title}</h1>
+              </div>
+              <div className="col-12 col-md-8">
+                <h1 className="my-0">{section.description.description}</h1>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
-  )
-}
-
-export const AboutItem = props => {
-  return (
-    <div className="col-12 col-lg-6">
-      <h4 className="mb-4">{props.title}</h4>
-      <p className="my-0">{props.description}</p>
-    </div>
   )
 }

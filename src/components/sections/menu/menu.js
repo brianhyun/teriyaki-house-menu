@@ -39,7 +39,7 @@ export default function Menu() {
 
   return (
     <section id="menu" className="container">
-      <h2 className="mb-5">Menu</h2>
+      <h1 className="mb-5">Menu</h1>
       <CardMenu data={data.content.edges} />
     </section>
   )

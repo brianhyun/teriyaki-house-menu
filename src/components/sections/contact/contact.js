@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <section className="container">
-      <h2 className="mb-5">Info</h2>
+      <h1 className="mb-5">Info</h1>
       <div className="mb-5">
         <Map coordinates={coordinates} />
       </div>
@@ -48,24 +48,24 @@ const InfoItem = props => {
   return (
     <>
       {props.hours ? (
-        <div className="col-12 col-md-6 col-lg-5">
-          <h5 className="fw-bold mb-3">{props.title}</h5>
+        <div className="col-12 col-md-8 col-lg-6">
+          <h4 className="fw-bold mb-3">{props.title}</h4>
           <div>
             {props.hours.map((day, index) => (
               <div
                 key={index}
                 className="d-flex align-items-center justify-content-between mb-1"
               >
-                <p className="mb-0">{day.day}</p>
-                <p className="mb-0">{day.hours}</p>
+                <p className="mb-0 fs-5">{day.day}</p>
+                <p className="mb-0 fs-5">{day.hours}</p>
               </div>
             ))}
           </div>
         </div>
       ) : (
         <div className="col-12 col-md-6">
-          <h5 className="fw-bold mb-3">{props.title}</h5>
-          <p className="mb-0">{props.info}</p>
+          <h4 className="fw-bold mb-3">{props.title}</h4>
+          <p className="mb-0 fs-5">{props.info}</p>
         </div>
       )}
     </>
