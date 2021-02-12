@@ -17,7 +17,7 @@ export default function Landing() {
   return (
     <section
       id="landing"
-      className="container-fluid position-relative bg-dark text-white p-4"
+      className="container-fluid position-relative d-flex align-items-center justify-content-center bg-dark text-white p-4"
     >
       <div
         className="position-absolute border border-white border-1 rounded-circle d-flex flex-column align-items-center justify-content-center"
